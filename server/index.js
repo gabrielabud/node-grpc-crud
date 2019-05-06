@@ -19,7 +19,12 @@ Using an older version of gRPC?
 */
 
 // knex queries
-function listProducts(call, callback) {}
+function listProducts(call, callback) {
+  knex('products')
+    .then((data) => { callback(null, { products: data }); });
+}
+
+const 
 function readProduct(call, callback) {}
 function createProduct(call, callback) {}
 function updateProduct(call, callback) {}
