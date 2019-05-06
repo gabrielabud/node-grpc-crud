@@ -24,11 +24,11 @@ function listProducts(call, callback) {
     .then((data) => { callback(null, { products: data }); });
 }
 
-const 
-function readProduct(call, callback) {}
-function createProduct(call, callback) {}
-function updateProduct(call, callback) {}
-function deleteProduct(call, callback) {}
+
+// function readProduct(call, callback) {}
+// function createProduct(call, callback) {}
+// function updateProduct(call, callback) {}
+// function deleteProduct(call, callback) {}
 
 // main
 function main() {
@@ -36,10 +36,10 @@ function main() {
   // gRPC service
   server.addService(productPackageDefinition.ProductService.service, {
     listProducts: listProducts,
-    readProduct: readProduct,
-    createProduct: createProduct,
-    updateProduct: updateProduct,
-    deleteProduct: deleteProduct,
+    // readProduct: readProduct,
+    // createProduct: createProduct,
+    // updateProduct: updateProduct,
+    // deleteProduct: deleteProduct,
   });
   // gRPC server
   server.bind('localhost:50051', grpc.ServerCredentials.createInsecure());
